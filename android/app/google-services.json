@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "743073115403",
+    "firebase_url": "https://coronareporter-5363d.firebaseio.com",
+    "project_id": "coronareporter-5363d",
+    "storage_bucket": "coronareporter-5363d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:743073115403:android:b6a4e202cc6560262b860e",
+        "android_client_info": {
+          "package_name": "com.DenizDalkilic.CoronavirusReporter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "743073115403-7n67k67v3gce37o5pql1q75n1gl0eet6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8TgT71sfpTIwLY2NbVZ9IM_eHDtX233U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "743073115403-7n67k67v3gce37o5pql1q75n1gl0eet6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
