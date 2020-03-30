@@ -15,25 +15,27 @@ class CountriesPage extends StatefulWidget {
 }
 
 class _CountriesPageState extends State<CountriesPage> {
-  int _counter = 0;
-  List<Country> countries;
+
+  static List<Country> countries;
 
   @override
   Widget build(BuildContext context) {
-    if (countries == null || countries.isEmpty) {
+    if (countries == null) {
       return FutureBuilder(
         future: FirestoreService.getCountriesData(),
-        builder: (context, AsyncSnapshot snapshot) {
-          if (snapshot.connectionState != ConnectionState.done)
+        builder: (context, AsyncSnapshot<List<Country>> snapshot) {
+          if (snapshot.connectionState != ConnectionState.done) {
             return progressIndicator();
-          else if (snapshot.data != null)
-            return Text((snapshot.data)[0].name.toString());
-          else
-            return Text("None");
+          } else if (snapshot.data != null) {
+            countries = snapshot.data;
+            return countryList(context, countries);
+          } else {
+            return someThingWentWrong();
+          }
         },
       );
     }
 
-    return countryList(context, widget.title, _counter, countries);
+    return countryList(context, countries);
   }
 }

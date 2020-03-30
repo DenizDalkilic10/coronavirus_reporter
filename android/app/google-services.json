@@ -1,34 +1,63 @@
 {
   "project_info": {
-    "project_number": "743073115403",
-    "firebase_url": "https://coronareporter-5363d.firebaseio.com",
-    "project_id": "coronareporter-5363d",
-    "storage_bucket": "coronareporter-5363d.appspot.com"
+    "project_number": "968703325096",
+    "firebase_url": "https://coronareporter-29161.firebaseio.com",
+    "project_id": "coronareporter-29161",
+    "storage_bucket": "coronareporter-29161.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:743073115403:android:b6a4e202cc6560262b860e",
+        "mobilesdk_app_id": "1:968703325096:android:dd9893517cf01c7b15e39d",
         "android_client_info": {
-          "package_name": "com.DenizDalkilic.CoronavirusReporter"
+          "package_name": "com.example.coronareporter"
         }
       },
       "oauth_client": [
         {
-          "client_id": "743073115403-7n67k67v3gce37o5pql1q75n1gl0eet6.apps.googleusercontent.com",
+          "client_id": "968703325096-inak0henm3i5v33hn6aitbsdqees94r9.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyD8TgT71sfpTIwLY2NbVZ9IM_eHDtX233U"
+          "current_key": "AIzaSyBWyeXmjd1alfjbkcSTbTj2L17oRJQFJ5c"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "743073115403-7n67k67v3gce37o5pql1q75n1gl0eet6.apps.googleusercontent.com",
+              "client_id": "968703325096-inak0henm3i5v33hn6aitbsdqees94r9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:968703325096:android:a07d516c01cdd50715e39d",
+        "android_client_info": {
+          "package_name": "com.example.coronavirus_reporter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "968703325096-inak0henm3i5v33hn6aitbsdqees94r9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWyeXmjd1alfjbkcSTbTj2L17oRJQFJ5c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "968703325096-inak0henm3i5v33hn6aitbsdqees94r9.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

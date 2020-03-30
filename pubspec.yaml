@@ -17,8 +17,11 @@ environment:
   sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
+  draggable_scrollbar: ^0.0.4
+  material_design_icons_flutter: 4.0.5045
+  cloud_firestore:
+  firebase_auth:
   loading: ^1.0.2
-  cloud_firestore: ^0.13.4+2
   flutter:
     sdk: flutter
 
@@ -36,6 +39,13 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
+  assets:
+    - assets/images/
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins.ttf
+          weight: 600
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
