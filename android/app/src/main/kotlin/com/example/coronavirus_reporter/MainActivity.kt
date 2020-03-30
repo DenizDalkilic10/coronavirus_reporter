@@ -1,4 +1,4 @@
-package com.example.coronavirus_reporter
+package com.denizdalkilic.coronavirusreporter
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity

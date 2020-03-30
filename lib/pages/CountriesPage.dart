@@ -1,5 +1,6 @@
 import 'package:coronavirus_reporter/Models/Country.dart';
 import 'package:coronavirus_reporter/Services/FirestoreService.dart';
+import 'package:coronavirus_reporter/controllers/ModelController.dart';
 import 'package:coronavirus_reporter/widgets/widgets.dart';
 
 import 'package:flutter/cupertino.dart';
@@ -15,20 +16,19 @@ class CountriesPage extends StatefulWidget {
 }
 
 class _CountriesPageState extends State<CountriesPage> {
-
-  static List<Country> countries;
-
   @override
   Widget build(BuildContext context) {
-    if (countries == null) {
+    if (ModelController.countries == null) {
       return FutureBuilder(
         future: FirestoreService.getCountriesData(),
         builder: (context, AsyncSnapshot<List<Country>> snapshot) {
           if (snapshot.connectionState != ConnectionState.done) {
             return progressIndicator();
           } else if (snapshot.data != null) {
-            countries = snapshot.data;
-            return countryList(context, countries);
+            ModelController.setCountries(snapshot.data);
+            ModelController.setWorld();
+            return countryList(context, ModelController.countries, widget.title,
+                onSelected, refresh);
           } else {
             return someThingWentWrong();
           }
@@ -36,6 +36,21 @@ class _CountriesPageState extends State<CountriesPage> {
       );
     }
 
-    return countryList(context, countries);
+    return countryList(
+        context, ModelController.countries, widget.title, onSelected, refresh);
+  }
+
+  void onSelected(String selection) {
+    setState(() {
+      ModelController.sortField = selection;
+      ModelController.sortCountries(selection);
+    });
+  }
+
+  void refresh() async {
+    ModelController.countries = await FirestoreService.getCountriesData();
+    setState(() {
+      ModelController.sortCountries(ModelController.sortField);
+    });
   }
 }
