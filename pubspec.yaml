@@ -17,6 +17,7 @@ environment:
   sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
+  diacritic: ^0.1.1
   draggable_scrollbar: ^0.0.4
   material_design_icons_flutter: 4.0.5045
   cloud_firestore:

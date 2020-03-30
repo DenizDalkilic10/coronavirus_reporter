@@ -9,6 +9,7 @@ import 'package:loading/indicator/ball_pulse_indicator.dart';
 import 'package:loading/loading.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:draggable_scrollbar/draggable_scrollbar.dart';
+import 'package:diacritic/diacritic.dart';
 
 Scaffold homeScreen(BuildContext context, PageController pageController,
     int pageIndex, Function onpagechanged, Function onTap) {
@@ -96,7 +97,8 @@ Widget countryList(BuildContext context, List<Country> countries, String title,
       body: countriesListView(context, countries, _scrollController));
 }
 
-Widget worldPage(BuildContext context, World world, String title, Function refresh) {
+Widget worldPage(
+    BuildContext context, World world, String title, Function refresh) {
   if (world == null) return progressIndicator();
   ScrollController _scrollController = ScrollController();
   return Scaffold(
@@ -275,7 +277,7 @@ Widget countryRow(Country country) {
           ),
           Positioned(
             top: 25,
-            left: 220,
+            left: 200,
             child: new Text("Total Deaths \n" + country.totalDeaths.toString(),
                 style: TextStyle(
                     color: Colors.redAccent,
@@ -305,7 +307,7 @@ Widget countryRow(Country country) {
           ),
           Positioned(
             top: 105,
-            left: 220,
+            left: 200,
             child: new Text("Recovered \n" + country.totalRecovered.toString(),
                 style: TextStyle(
                     color: Colors.white,
@@ -315,7 +317,7 @@ Widget countryRow(Country country) {
           ),
           Positioned(
             top: 65,
-            left: 220,
+            left: 200,
             child: new Text("New Deaths \n" + country.newDeaths.toString(),
                 style: TextStyle(
                     color: Colors.pink,
@@ -338,6 +340,7 @@ Widget countryRow(Country country) {
     ),
   );
 
+  String name = removeDiacritics(country.name);
   //country name should be converted to country code using the json file
   final countryThumbnail = new Container(
       width: 100.0,
@@ -346,7 +349,8 @@ Widget countryRow(Country country) {
         shape: BoxShape.circle,
         image: new DecorationImage(
             fit: BoxFit.fitHeight,
-            image: new AssetImage("assets/images/" + country.name + ".png")),
+            image: new AssetImage(
+                "assets/images/${name.replaceAll(new RegExp(r"\s+\b|\b\s"), "")}.png")),
       ));
 
   return new Container(
